@@ -1,5 +1,11 @@
 # Pan Tilt Zoom (PTZ) Controls for OBS Studio
 
+> **About this fork:** this is [glikely/obs-ptz](https://github.com/glikely/obs-ptz)
+> with one addition, a driver for Canon remote cameras (CR-N and CR-X series)
+> over Canon's XC protocol, which links pan/tilt speed to the zoom. See
+> [docs/canon-xc.md](docs/canon-xc.md). Everything else, and all credit for PTZ
+> Controls, is Grant Likely's. Unless you need Canon XC, please use the original.
+
 [![Push](https://github.com/glikely/obs-ptz/actions/workflows/push.yaml/badge.svg)](https://github.com/glikely/obs-ptz/actions/workflows/push.yaml)
 [![Crowdin](https://badges.crowdin.net/obs-ptz/localized.svg)](https://crowdin.com/project/obs-ptz)
 
