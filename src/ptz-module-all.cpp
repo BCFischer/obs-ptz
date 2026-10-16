@@ -25,6 +25,9 @@
 #if defined(ENABLE_ONVIF)
 #include "ptz-onvif.hpp"
 #endif
+#if defined(ENABLE_CANON_XC)
+#include "ptz-canon-xc.hpp"
+#endif
 #if defined(ENABLE_USB_CAM)
 #include "ptz-usb-cam.hpp"
 #endif
@@ -46,6 +49,9 @@ void ptz_load_devices()
 #if defined(ENABLE_ONVIF)
 	ptz_onvif_register_filter();
 #endif /* ENABLE_ONVIF */
+#if defined(ENABLE_CANON_XC)
+	ptz_canon_xc_register_filter();
+#endif /* ENABLE_CANON_XC */
 #if defined(ENABLE_USB_CAM)
 	ptz_usb_cam_register_filter();
 #endif /* ENABLE_USB_CAM */

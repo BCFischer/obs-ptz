@@ -31,6 +31,7 @@ Features:
   - Pelco-P
   - Pelco-D
   - ONVIF (experimental)
+  - Canon XC (CR-N and CR-X remote cameras), with pan/tilt speed linked to the zoom
   - USB Cameras (UVC)
 - Pan, tilt and zoom within any source with the Soft PTZ Control filter, with no camera needed
 

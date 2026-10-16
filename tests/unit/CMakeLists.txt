@@ -14,14 +14,19 @@ add_executable(
   main.cpp
   test_lifecycle.cpp
   test_ws_decl.cpp
+  test_canon_xc.cpp
   "${CMAKE_CURRENT_LIST_DIR}/../../src/core/ptz-lifecycle.hpp"
+  "${CMAKE_CURRENT_LIST_DIR}/../../src/drivers/canon/canon-xc-protocol.hpp"
   "${CMAKE_CURRENT_LIST_DIR}/../../src/controller/ptz-ws-decl.cpp"
   "${CMAKE_CURRENT_LIST_DIR}/../../src/controller/ptz-ws-decl.hpp"
 )
 
 target_include_directories(
   ptz-unit-tests
-  PRIVATE "${CMAKE_CURRENT_LIST_DIR}/../../src/core" "${CMAKE_CURRENT_LIST_DIR}/../../src/controller"
+  PRIVATE
+    "${CMAKE_CURRENT_LIST_DIR}/../../src/core"
+    "${CMAKE_CURRENT_LIST_DIR}/../../src/controller"
+    "${CMAKE_CURRENT_LIST_DIR}/../../src/drivers/canon"
 )
 target_link_libraries(ptz-unit-tests PRIVATE catch2_amalgamated)
 set_target_properties(ptz-unit-tests PROPERTIES CXX_STANDARD 17)
@@ -34,3 +39,4 @@ endif()
 
 add_test(NAME lifecycle COMMAND ptz-unit-tests "[lifecycle]")
 add_test(NAME ws_decl COMMAND ptz-unit-tests "[ws-decl]")
+add_test(NAME canon_xc COMMAND ptz-unit-tests "[canon-xc]")

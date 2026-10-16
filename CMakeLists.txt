@@ -247,6 +247,21 @@ if(ENABLE_ONVIF)
   )
 endif()
 
+option(ENABLE_CANON_XC "Enable Canon XC protocol camera support" ON)
+if(ENABLE_CANON_XC)
+  add_compile_definitions(ENABLE_CANON_XC)
+  ptz_add_library(ptz-driver-canon OBJECT)
+  target_include_directories(ptz-driver-canon PUBLIC "${CMAKE_SOURCE_DIR}/src/drivers/canon")
+  target_link_libraries(ptz-driver-canon PUBLIC ptz-device-core)
+  target_sources(
+    ptz-driver-canon
+    PRIVATE
+      src/drivers/canon/ptz-canon-xc.cpp
+      src/drivers/canon/ptz-canon-xc.hpp
+      src/drivers/canon/canon-xc-protocol.hpp
+  )
+endif()
+
 option(ENABLE_USB_CAM "Enable USB camera support" ON)
 if(ENABLE_USB_CAM)
   # Each platform provides its own backend; see src/drivers/usb/ptz-usb-backend.hpp
